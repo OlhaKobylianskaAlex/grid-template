@@ -1,0 +1,91 @@
+@use "../../../presets" as *;
+@use "../../../mixins/" as *;
+
+.form-container {
+  display: grid;
+  justify-content: center;
+
+  max-width: $ul;
+  margin: auto;
+  padding: 0 $gap;
+
+  gap: $gap;
+  @include md-min {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include md-sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include sm {
+    grid-template-columns: 1fr;
+  }
+
+  &__block {
+    @include sm {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      grid-column-end: 3;
+      grid-column-start: 1;
+    }
+
+    &:first-of-type {
+      @include md-sm {
+        grid-column-end: 3;
+        grid-column-start: 1;
+      }
+    }
+
+    &-input {
+      width: 100%;
+      height: $gap-x3;
+      padding-right: $gap-lg;
+      padding-left: $gap-lg;
+
+      letter-spacing: 0.15em;
+
+      color: $color-light;
+      border: 2px solid rgba($color-light, 0);
+      border-bottom-color: rgba($color-light, 0.25);
+      outline: 0;
+      background-color: rgba($color-light, 0.05);
+
+      font-size: 1.125rem;
+
+      &[type="submit"] {
+        cursor: pointer;
+        letter-spacing: 0.1em;
+
+        background-color: rgba($color-light, 0.1);
+
+        font-weight: 400;
+        line-height: 1.15;
+
+        &:hover {
+          border-color: white;
+          background-color: #d66926;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        border-color: rgba($color-light, 0.15);
+        border-bottom-color: rgba($color-light, 1);
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+    }
+    input {
+      transition: color 1s, background-color 1s, border-color 1s;
+
+      &::placeholder {
+        color: $color-gray;
+
+        font-weight: 400;
+      }
+
+      &:hover::placeholder {
+        color: rgba(140, 155, 171, 1);
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.post-container {
+  @extend %container;
+
+  &__content {
+    display: grid;
+
+    padding-bottom: $gap;
+
+    gap: $gap;
+    @include lg-min {
+      grid-template-areas: "b1 b1 b2 b3" "b4 b5 b6 b6";
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include lg-md {
+      grid-template-areas: "b1 b1 b2" "b3 b4 b4" "b5 b5 b6";
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-areas: "b1 b2" "b3 b4" "b5 b6";
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include sm {
+      grid-template-areas: "b1" "b2" "b3" "b4" "b5" "b6";
+      grid-template-columns: 1fr;
+    }
+  }
+  &__title {
+    @include lg-min {
+      margin: 0 0 48px 0;
+
+      font-size: 2.5rem;
+    }
+    @include lg-md {
+      margin: 0 0 42px 0;
+
+      font-size: 2rem;
+    }
+    @include md {
+      margin: 0 0 36px 0;
+
+      font-size: 1.5rem;
+    }
+    @include sm {
+      text-align: center;
+    }
+  }
+}

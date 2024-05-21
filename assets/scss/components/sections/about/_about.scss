@@ -1,0 +1,20 @@
+@use "../../../presets" as *;
+@use "../../../mixins/" as *;
+
+.about {
+  background-color: $color-gray-light;
+
+  @include rel-position;
+  @include lg-min {
+    padding-top: $gap-x5;
+    padding-bottom: 98.7px;
+  }
+  @include lg-md {
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
+  }
+  @include md {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
+}

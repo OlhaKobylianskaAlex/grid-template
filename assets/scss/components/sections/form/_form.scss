@@ -1,0 +1,9 @@
+@use "../../../presets" as *;
+@use "../../../mixins/" as *;
+
+.form {
+  max-width: 100%;
+  padding: $gap-lg 0;
+
+  background-color: $color-primary;
+}

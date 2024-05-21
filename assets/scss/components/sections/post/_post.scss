@@ -1,0 +1,33 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.post {
+  @include lg-min {
+    padding-top: $gap-x5;
+    padding-bottom: 70px;
+  }
+  @include lg-md {
+    padding-top: $gap-x4;
+    padding-bottom: 50px;
+  }
+  @include md-sm {
+    padding-top: $gap-x3;
+    padding-bottom: 30px;
+  }
+  @include sm {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 0;
+
+    @include sm-min {
+      width: 100%;
+      margin-bottom: $gap-lg;
+    }
+  }
+}
