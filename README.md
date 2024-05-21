@@ -1,4 +1,4 @@
-# Page HTML coding using Grid
+# HTML coding using Grid
 
 ## Project view page
 https://olhakobylianskaalex.github.io/Grid-template/
